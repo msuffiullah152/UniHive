@@ -1,0 +1,41 @@
+type Users @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  college_level: String
+  email: AWSEmail!
+  password: String!
+  college: String!
+  major: String!
+  course_interests: String
+  UsersToPosts: [Posts] @hasMany(indexName: "byUsers", fields: ["id"])
+  UsersToMessages: [Messages] @hasMany(indexName: "byUsers", fields: ["id"])
+  UsersToGroups: [Groups] @manyToMany(relationName: "UsersGroups")
+}
+
+type Groups @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  group_name: String
+  group_description: String
+  group_location: String
+  college_major: String
+  GroupsToUsers: [Users] @manyToMany(relationName: "UsersGroups")
+  GroupsToPosts: [Posts] @hasMany(indexName: "byGroups", fields: ["id"])
+}
+
+type Posts @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  post_content: String
+  updatedAt: AWSDateTime
+  isSwarm: Boolean!
+  swarmLocation: AWSJSON
+  createdAt: AWSDateTime!
+  usersID: ID! @index(name: "byUsers")
+  groupsID: ID! @index(name: "byGroups")
+}
+
+type Messages @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  message_content: String!
+  createdAt: AWSDateTime!
+  usersID: ID! @index(name: "byUsers")
+} 

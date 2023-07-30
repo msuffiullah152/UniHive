@@ -1,10 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { DataStore } from "@aws-amplify/datastore";
+import { Users } from "./models";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [data, setdata] = useState();
+  const postData = async () => {
+    await DataStore.save(
+      new Users({
+        name: "The Admin Guy's Vite Friend",
+        college_level: "Senior",
+        email: "zecharydouglas@testemail.com",
+        password: "adfadf",
+        college: "Cuny College of Staten Island",
+        major: "Computer Science",
+        course_interests: "Data Structures",
+      })
+    );
+  };
+
+  const fetchData = async () => {
+    const newData = await DataStore.query(Users);
+    setdata(newData);
+    console.log(data);
+  };
 
   return (
     <>
@@ -18,18 +40,26 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button className=" mr-3" onClick={postData}>
+          Post some data
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <button onClick={fetchData}>Fetch some data</button>
+        <p></p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <table className="read-the-docs">
+        <tbody>
+          {data &&
+            data.map((model) => (
+              <tr>
+                <td>{model.name}</td>
+                <td>{model.college_level}</td>
+                <td>{model.email}</td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

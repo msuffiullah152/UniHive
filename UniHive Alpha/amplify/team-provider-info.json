@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-unihive-staging-123447-authRole",
+      "UnauthRoleArn": "arn:aws:iam::001726384756:role/amplify-unihive-staging-123447-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::001726384756:role/amplify-unihive-staging-123447-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-unihive-staging-123447-deployment",
+      "UnauthRoleName": "amplify-unihive-staging-123447-unauthRole",
+      "StackName": "amplify-unihive-staging-123447",
+      "StackId": "arn:aws:cloudformation:us-east-1:001726384756:stack/amplify-unihive-staging-123447/4e2c37b0-2e0c-11ee-95e7-0e9facd4ee31",
+      "AmplifyAppId": "d2yu0i3d4n65sc"
+    },
+    "categories": {
+      "auth": {
+        "UniHive": {}
+      }
+    }
+  }
+}
