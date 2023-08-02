@@ -124,9 +124,12 @@ function SignUp() {
         maxWidth="xs"
         sx={{ "& .MuiDialog-paper": { backgroundColor: "#1B1D21" } }}
       >
+<<<<<<< HEAD:UniHive Front End/src/components/SingnUp.jsx
+=======
+        {" "}
+>>>>>>> e3eae2d6c1e45cbafccd474e701f4a52ab4973f9:UniHive/src/components/SingnUp.jsx
         <DialogTitle>Sign Up</DialogTitle>
         <DialogContent>
-          {/* Add your input fields here */}
           <TextField
             id="fullName"
             label="Full Name"
@@ -266,6 +269,7 @@ function SignUp() {
 }
 
 export default SignUp;
+<<<<<<< HEAD:UniHive Front End/src/components/SingnUp.jsx
 
 // import React, { useState } from "react";
 // import Button from "@mui/material/Button";
@@ -406,3 +410,5 @@ export default SignUp;
 // }
 
 // export default SignUp;
+=======
+>>>>>>> e3eae2d6c1e45cbafccd474e701f4a52ab4973f9:UniHive/src/components/SingnUp.jsx
