@@ -7,6 +7,8 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import collegesData from "../../majors.json";
+import Divider from '@mui/material/Divider';
+
 
 function CreateHive({ open, onClose }) {
   const [hiveName, setHiveName] = useState('');
@@ -63,6 +65,7 @@ function CreateHive({ open, onClose }) {
           value={hiveName}
           onChange={(e) => setHiveName(e.target.value)}
         />
+        
         <TextField
           label="Hive Description"
           variant="outlined"
@@ -70,7 +73,7 @@ function CreateHive({ open, onClose }) {
           value={hiveDescription}
           onChange={(e) => setHiveDescription(e.target.value)}
           multiline
-          rows={4}
+          rows={3}
         />
 
         <TextField
