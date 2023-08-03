@@ -8,11 +8,16 @@ import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import collegesData from "../../majors.json";
 import Divider from '@mui/material/Divider';
+<<<<<<< HEAD
 import io from "socket.io-client"; //Used to create connection with backend
 
 
 const socket= io("http://localhost:3010");
 
+=======
+
+
+>>>>>>> bf34232df6c299e192c587b61c242f3cec06b0cf
 function CreateHive({ open, onClose }) {
   const [hiveName, setHiveName] = useState('');
   const [hiveDescription, setHiveDescription] = useState('');
@@ -51,6 +56,7 @@ function CreateHive({ open, onClose }) {
     console.log('Selected College:', selectedCollege);
     console.log('Selected Major:', selectedMajor);
 
+<<<<<<< HEAD
 
     const formData={hiveName, hiveDescription, selectedCollege, selectedMajor};
     // Perform any additional actions or API calls as needed
@@ -65,6 +71,10 @@ function CreateHive({ open, onClose }) {
         });
 
 */
+=======
+    // Perform any additional actions or API calls as needed
+
+>>>>>>> bf34232df6c299e192c587b61c242f3cec06b0cf
     // Close the modal
     handleClose();
   };
@@ -160,3 +170,7 @@ function CreateHive({ open, onClose }) {
 
 export default CreateHive;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bf34232df6c299e192c587b61c242f3cec06b0cf
