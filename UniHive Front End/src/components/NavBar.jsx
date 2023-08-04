@@ -117,11 +117,10 @@ function ResponsiveAppBar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.2rem',
-              color: 'inherit',
+              color: 'white',
               textDecoration: 'none',
-              
-              
-              
+
+                        
             }}
           >
             UNIHIVE
@@ -155,7 +154,7 @@ function ResponsiveAppBar() {
             <img
             src={Bell}
             alt="Bell"
-            style={{ display: { xs: 'none', md: 'flex' },width: '95px', height: 'auto',}} 
+            style={{ display: { xs: 'none', md: 'flex' },width: '80px', height: 'auto',}} 
             
           />
                     <img
@@ -167,14 +166,14 @@ function ResponsiveAppBar() {
           <img
             src={Discover}
             alt="Discover"
-            style={{ display: { xs: 'none', md: 'flex' },width: '105px', height: 'auto',}} 
+            style={{ display: { xs: 'none', md: 'flex' },width: '85px', height: 'auto',}} 
             
           />
 
           <img
             src={Faqs}
             alt="Faqs"
-            style={{ display: { xs: 'none', md: 'flex' },width: '80px', height: 'auto',}} 
+            style={{ display: { xs: 'none', md: 'flex' },width: '60px', height: 'auto',}} 
             
           />  
           </Typography>

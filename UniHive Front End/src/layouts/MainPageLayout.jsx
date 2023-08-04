@@ -9,7 +9,7 @@ import Post from '../components/Post';
 
 export default function MainPageLayout() {
   return (
-    <div >
+    <div>
       <ResponsiveAppBar/>
     <ClippedDrawer/>
      <Post/>
